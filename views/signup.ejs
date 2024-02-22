@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/styleLog.css" rel="stylesheet" type="text/css"/>
+  <title>Sign Up</title>
+</head>
+<body>
+  <div class="indexBackground">
+    <div class="slideshow-container"></div>
+    <div class="indexform">
+      <div id="second">
+        <div class="logo">
+          <img src="/logo.png" alt="Logo" class="img">
+        </div>
+        <h1>Sign Up</h1>
+        <form action="/signup" method="post" name="registeration" id="registrationForm">
+          <div class="form-group">
+            <label for="username"> New Username </label>
+            <p><input type="text" name="username" class="form-control" id="username" placeholder="Enter New Username"></p>
+          </div>
+          <div class="form-group">
+            <label for="">New Password</label>
+            <p><input type="password" name="password" class="form-control" id="password" placeholder="Enter Password"></p>
+          </div>
+          <div class="submit btn">
+            <div id="error-message" style="color: red;"></div>
+            <button type="submit" class="mybtn">Get Started</button>
+          </div>
+          <div class="login-or">
+            <hr class="hr-or">
+            <span class="span-or">or</span>
+        </div>
+        <div class="form-group">
+          <p class="text-center">Already have an account? <a href="/"> Sign in Here </a></p>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const images = [
+      '/img1.jpg',
+      '/img2.jpg',
+      '/img3.jpg',
+      '/img4.jpg',
+      '/img5.jpg',
+      '/img6.jpg',
+      '/img7.jpg'
+    ];
+
+    let currentImageIndex = 0;
+    const slideshowContainer = document.querySelector('.slideshow-container');
+
+    function changeImage() {
+      const nextImageIndex = (currentImageIndex + 1) % images.length;
+      const currentImage = document.createElement('img');
+      currentImage.src = images[currentImageIndex];
+      currentImage.classList.add('slideshow-image', 'fade-in');
+
+      slideshowContainer.appendChild(currentImage);
+
+      setTimeout(() => {
+          currentImage.style.opacity = '0.4';
+          setTimeout(() => {
+              currentImage.style.opacity = '0';
+              currentImage.remove();
+              currentImageIndex = nextImageIndex;
+              changeImage();
+          }, 4000); // Change image every 4 seconds
+      }, 50); // Show image after a short delay
+    }
+
+      changeImage();
+
+    });
+    //used for red error message for empty entries
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        var email = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        var errorMessage = document.getElementById("error-message");
+
+        if (email === "" || password === "") {
+        event.preventDefault(); // Prevent form submission
+        errorMessage.textContent = "Please fill in all fields.";
+        } 
+        else {
+          errorMessage.textContent = ""; // Clear the error message if all fields are filled
+        }
+      });
+
+  </script>
+
+
+</body>
+</html>

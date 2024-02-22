@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DishDaddy website</title>
+    <link rel="stylesheet" type="text/css" href="/styles4.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+<body>
+    <!-- Include the navigation bar -->
+    <nav>
+        <!-- Adding the logo image -->
+        <div class="logo">
+            <a href="/home"><img src="img/DishDaddy logo.png" class="img-fluid"></a>
+        </div>
+        
+        <ul>
+            <!--<li><a href="/">Home</a></li> -->
+            <li><a href="/explorePage">EXPLORE</a></li>
+            <li><a href="/myRecipe">MY RECIPE</a></li>
+            <li><a href="/discussion">DISCUSSION</a></li>
+        </ul>
+
+        <!-- Adding a search bar -->
+        <div class="search-bar">
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search">
+            </form>
+        </div>
+    </nav>
+
+
+        <!-- The myRecipe page code -->
+        <h3>MY RECIPES</h3>
+        <p>Folder</p>
+
+        <div class="myRecipeFolder">
+            <div class="folder">
+                <a href="/folderTemplate">Bake</a>
+            </div>
+            <div class="folder">
+                <a href="folderTemplate">Tomato</a>
+            </div>
+            <div class="folder">
+                <a href="folderTemplate">Bites</a>
+            </div>
+            <div class="folder">
+                <button class="addButton" id="addButton" onclick="openAddFolderForm()">+</button>
+                <div class="addFolderForm" id="addFolderForm">
+                    <form class="folderForm">
+                        <label for="folderName">Folder Name: </label>
+                        <input required type="text" id="folderName" name="folderName">
+                  
+                        <button type="submit" class="btn">Add Folder</button>
+                        <button type="button" class="btn cancel" onclick="closeAddFolderForm()">Close</button>
+                    </form>
+                </div>
+                
+            </div>
+  
+        </div>
+
+        <div class="myRecipeCard">
+            <div class="card">
+                <div class="foodimage">
+                    <img src="img/pasta.jpg">
+                </div>
+                <div class="central-div">
+                    <h3>Pasta<br><br>Review: 4/5</h3>
+                    <button class="addToBtn">+ Add to</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="foodimage">
+                    <img src="img/sandwich.jpg">
+                </div>
+                <div class="central-div">
+                    <h3>Sandwich<br><br>Review: 4/5</h3>
+                    <button class="addToBtn">+ Add to</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="foodimage">
+                    <img src="img/strawberry cake.jpg">
+                </div>
+                <div class="central-div">
+                    <h3>Strawberry Cake<br><br>Review: 4/5</h3>
+                    <button class="addToBtn">+ Add to</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="foodimage">
+                    <img src="img/tomato soup.jpg">
+                </div>
+                <div class="central-div">
+                    <h3>Tomato Soup<br><br>Review: 4/5</h3>
+                    <button class="addToBtn">+ Add to</button>
+                </div>
+            </div>
+        </div>  
+
+
+</body>
+
+<script>
+    const form = document.getElementById('addFolderForm');
+    form.style.display = 'none';
+
+    function openAddFolderForm() {
+        document.getElementById("addFolderForm").style.display = "block";
+        document.getElementById("addButton").style.display = "none";
+      }
+      
+      function closeAddFolderForm() {
+        document.getElementById("addFolderForm").style.display = "none";
+        document.getElementById("addButton").style.display = "block";
+      }
+    
+</script>
+</html>

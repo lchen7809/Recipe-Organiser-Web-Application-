@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="/style2.css">
+</head>
+<body>
+  <h1>Welcome to the Dashboard</h1>
+  <p>Hello, <%= username %>!</p>
+
+  <a href="/createmynewrecipe">Create a New Recipe</a>
+
+  <div class="search-container">
+    <input type="text" id="search-query" placeholder="Search for recipes...">
+    <button id="search-button">Search</button>
+  </div>
+  <div id="results-container">
+    <!-- Search results will be displayed here -->
+  </div>
+  <p><a href="/logout">Log out</a></p>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Create My New Recipe</title>
+    <link href="styles4.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  </head>
+
+  <body>
+    <!-- Include the navigation bar -->
+    <nav>
+        <!-- Adding the logo image -->
+        <div class="logo">
+            <img src="img/DishDaddy logo.png" class="img-fluid">
+        </div>
+        
+        <ul>
+            <!--<li><a href="/">Home</a></li> -->
+            <li><a href="/explorePage">EXPLORE</a></li>
+            <li><a href="/myRecipe">MY RECIPE</a></li>
+            <li><a href="/discussion">DISCUSSION</a></li>
+        </ul>
+
+        <!-- Adding a search bar -->
+        <div class="search-bar">
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search">
+            </form>
+        </div>
+    </nav>
+
+    <br />
+
+    <div class="roundedOrangeCorners" style="padding-left: 25px">
+      <br />
+
+      <form action="">
+        <label for="name">Your name</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          size="50"
+          placeholder="John Smith"
+        /><br /><br />
+
+        <label for="recipename">Recipe name</label><br />
+        <input
+          type="text"
+          id="recipename"
+          name="recipename"
+          size="50"
+          placeholder="Fried Rice"
+        /><br /><br />
+
+        <p>Recipe image</p>
+
+        <input type="file" accept="image/*" onchange="loadFile(event)" />
+        <p><img id="output" width="200" /></p>
+
+        <script>
+          var loadFile = function (event) {
+            var image = document.getElementById("output");
+            image.src = URL.createObjectURL(event.target.files[0]);
+          };
+
+          function SubmitRecipe() {
+            alert("Recipe Submitted.");
+          }
+        </script>
+
+        <label for="recipedescription">Recipe description</label><br />
+        <input
+          type="text"
+          id="recipename"
+          name="recipedescription"
+          size="50"
+          placeholder="Delicious and easy to prepare"
+        /><br /><br />
+
+        <label for=" preptime"> 🕔Prep time</label><br />
+        <input
+          type="text"
+          id="preptime"
+          name="preptime"
+          size="50"
+          placeholder=" 5 min"
+        /><br /><br />
+
+        <label for="cooktime"> 🕔Cook time</label><br />
+        <input
+          type="text"
+          id="cooktime"
+          name="cooktime"
+          size="50"
+          placeholder="15 min"
+        /><br /><br />
+
+        <label for="ingredients">Ingredients</label><br />
+        <textarea
+          placeholder="1 cup rice
+etc."
+          id="ingredients"
+          name="ingredients"
+          rows="6"
+          cols="53"
+        ></textarea
+        ><br /><br />
+
+        <label for="instructions">Instructions</label><br />
+        <textarea
+          placeholder="1. Prepare ingredients
+2. Fry rice
+3. Etc."
+          id="instructions"
+          name="instructions"
+          rows="6"
+          cols="53"
+        ></textarea
+        ><br /><br />
+
+        <input
+          type="submit"
+          value="Click to Submit Recipe"
+          onclick="SubmitRecipe()"
+        />
+      </form>
+      <br />
+    </div>
+  </body>
+</html>
