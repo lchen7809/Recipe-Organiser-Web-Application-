@@ -1,5 +1,7 @@
-##  Coursework Template ##
-### CM2040 Database Networks and the Web ###
+##  Running the Code ##
+### Database Networks and the Web Module ###
+
+Live demo not available at the point of upload, snapshots of application can be found in: 
 
 #### Installation requirements ####
 
