@@ -1,7 +1,7 @@
 ##  Running the Code ##
 ### Database Networks and the Web Module ###
 
-Live demo not available at the point of upload, snapshots of application can be found in: 
+Live demo not available at the point of upload
 
 #### Installation requirements ####
 
